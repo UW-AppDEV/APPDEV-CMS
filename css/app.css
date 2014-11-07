@@ -1,3 +1,46 @@
 /*
-
+  Variables
 */
+/*
+  Mixins, functions and other Sass utilities
+*/
+/*
+  Media queries
+*/
+/*
+  Main Code
+*/
+* {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: none !important;
+  box-shadow: none !important; }
+
+/*
+  Shared Classes and utilities
+*/
+/*
+  Foundation and other frameworks modifications
+*/
+.slick-prev, .slick-next {
+  display: none !important; }
+
+.accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
+  display: block;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5); }
+
+.accordion .accordion-navigation > a, .accordion dd > a {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  color: #FFF;
+  margin: 10px auto;
+  padding: 1rem;
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 1rem; }
+
+.accordion .accordion-navigation.active > a, .accordion dd.active > a, .accordion dd a:hover {
+  background: rgba(255, 255, 255, 0.2); }
+
+.accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
+  background: rgba(255, 255, 255, 0.2); }

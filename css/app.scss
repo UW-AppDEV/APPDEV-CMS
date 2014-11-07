@@ -1,3 +1,111 @@
 /*
-
+  Variables
 */
+
+$header-font-weight: 400;
+$subheader-font-weight: 300;
+
+/*
+  Mixins, functions and other Sass utilities
+*/
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin animationDelay($time) {
+  animation-delay: $time;
+  -webkit-animation-delay: $time;
+  -moz-webkit-animation-delay: $time;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -o-border-radius:$radius;
+}
+
+@mixin box-shadow($args) {
+  -moz-box-shadow: $args;
+  -webkit-box-shadow: $args;
+  box-shadow: $args;
+}
+
+/*
+  Media queries
+*/
+
+@mixin bp-large {
+  @media only screen and (max-width: 60em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 40em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 30em) {
+    @content;
+  }
+}
+
+/*
+  Main Code
+*/
+
+* {
+  -webkit-font-smoothing:antialiased;
+  text-shadow:none !important;
+  box-shadow: none !important;
+}
+
+
+/*
+  Shared Classes and utilities
+*/
+
+
+
+/*
+  Foundation and other frameworks modifications
+*/
+
+.slick-prev, .slick-next {
+  display:none !important;
+}
+.accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
+  display: block;
+  background: rgba(0, 0, 0, 0);
+  color: rgba(255, 255, 255, 0.5);
+}
+.accordion .accordion-navigation > a, .accordion dd > a {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  color: #FFF;
+  margin: 10px auto;
+  padding: 1rem;
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+.accordion .accordion-navigation.active > a, .accordion dd.active > a, .accordion dd a:hover  {
+  background: rgba(255, 255, 255, 0.2);
+}
+.accordion .accordion-navigation > a:hover, .accordion dd > a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
