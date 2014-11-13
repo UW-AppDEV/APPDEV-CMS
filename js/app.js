@@ -62,6 +62,18 @@ app.factory('announcements', function () {
 
 });
 
+app.factory('about', function () {
+
+});
+
+app.factory('events', function () {
+
+});
+
+app.factory('admin', function () {
+
+});
+
 /*
  Controllers
  */
