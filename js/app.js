@@ -78,6 +78,22 @@ app.factory('admin', function () {
  Controllers
  */
 
+app.controller('homeCtrl', function () {
+
+});
+
+app.controller('aboutCtrl', function () {
+
+});
+
+app.controller('eventsCtrl', function () {
+
+});
+
+app.controller('appCtrl', function () {
+
+});
+
 
 
 /*
