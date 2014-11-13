@@ -20,6 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     // For any unmatched url, redirect to /404
     $urlRouterProvider.otherwise("/404");
     //
+
     // Now set up the states
     $stateProvider
         .state('home', {
@@ -47,7 +48,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "partials/404.html",
             controller: "404Ctrl"
         });
-
 });
 
 /*
