@@ -9,6 +9,8 @@ var app = angular.module('AppDEV', ['firebase']);
 
 var database = 'https://appdev.firebaseio.com/';
 
+var remoteDB = new Firebase(database);
+
 var localStorage = window.localStorage;
 
 /*
@@ -170,6 +172,14 @@ app.factory('admin', function () {
     }
 
 });
+
+// Returns the basic setup of the app.
+app.factory('config', function ($firebase) {
+
+    return $firebase(remoteDB.child("config"))
+
+});
+
 
 /*
  Controllers
