@@ -1,13 +1,13 @@
 /*
  Initialization
  */
-var app = angular.module('AppDEV', []);
+var app = angular.module('AppDEV', ['firebase']);
 
 /*
  Database setup
  */
 
-var database = 'DB'; // TODO: need to add the firebase here.
+var database = 'https://appdev.firebaseio.com/';
 
 var localStorage = window.localStorage;
 
@@ -69,29 +69,105 @@ app.config(function($stateProvider, $urlRouterProvider) {
  Services
  */
 
+// Returns if the user is logged in or not.
 app.factory('$loginCheck', function () {
 
-    if (localStorage.getItem('uid') === null || localStorage.getItem('uid') === undefined) {
-        return false;
-    } else {
-        return true;
-    }
+    return (localStorage.getItem('uid') === null ||
+    localStorage.getItem('uid') === undefined);
 
 });
 
 app.factory('announcements', function () {
 
+    return {
+
+        getAll: function () {
+
+        },
+
+        getByID : function (ID) {
+
+        },
+
+        add: function (announcementObj) {
+
+        },
+
+        removeByID: function (ID) {
+
+        },
+
+        updateByID: function (ID) {
+
+        }
+
+    }
+
 });
 
 app.factory('pages', function () {
+
+    return  {
+
+        getAll: function () {
+
+        },
+
+        getByID : function (ID) {
+
+        },
+
+        add: function (pageObj) {
+
+        },
+
+        removeByID: function (ID) {
+
+        },
+
+        updateByID: function (ID) {
+
+        }
+
+    }
 
 });
 
 app.factory('events', function () {
 
+    return  {
+
+        getAll: function () {
+
+        },
+
+        getByID : function (ID) {
+
+        },
+
+        add: function (eventObj) {
+
+        },
+
+        removeByID: function (ID) {
+
+        },
+
+        updateByID: function (ID) {
+
+        }
+
+    }
+
 });
 
 app.factory('admin', function () {
+
+    return {
+
+        shit: "Some shit"
+
+    }
 
 });
 
@@ -101,21 +177,57 @@ app.factory('admin', function () {
 
 app.controller('homeCtrl', function () {
 
+    /*
+     Initialization
+     */
+
+    /*
+     Ui Tweaks
+     */
+
 });
 
 app.controller('eventsCtrl', function () {
+
+    /*
+     Initialization
+     */
+
+    /*
+     Ui Tweaks
+     */
 
 });
 
 app.controller('eventCtrl', function () {
 
+    /*
+     Initialization
+     */
+
 });
 
 app.controller('pageCtrl', function () {
 
+    /*
+     Initialization
+     */
+
+    /*
+     Ui Tweaks
+     */
+
 });
 
 app.controller('adminCtrl', function () {
+
+    /*
+     Initialization
+     */
+
+    /*
+     Ui Tweaks
+     */
 
 });
 
