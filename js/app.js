@@ -28,10 +28,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "partials/home.html",
             controller: "homeCtrl"
         })
-        .state('about', {
-            url: "/about",
-            templateUrl: "partials/about.html",
-            controller: "aboutCtrl"
+        .state('page', {
+            url: "/page/:pageID",
+            templateUrl: "partials/page.html",
+            controller: "pageCtrl",
+            resolve: {
+                pageID: function ($stateParams) {
+                    return $stateParams.pageID;
+                }
+            }
+        })
+        .state('event',  {
+            url: "/event/:eventID",
+            templateUrl: "partials/event.html",
+            controller: "eventCtrl",
+            resolve: {
+                eventID: function ($stateParams) {
+                    return $stateParams.eventID;
+                }
+            }
         })
         .state('events', {
             url: "/events",
@@ -56,13 +71,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.factory('$loginCheck', function () {
 
+    if (localStorage.getItem('uid') === null || localStorage.getItem('uid') === undefined) {
+        return false;
+    } else {
+        return true;
+    }
+
 });
 
 app.factory('announcements', function () {
 
 });
 
-app.factory('about', function () {
+app.factory('pages', function () {
 
 });
 
@@ -82,15 +103,19 @@ app.controller('homeCtrl', function () {
 
 });
 
-app.controller('aboutCtrl', function () {
-
-});
-
 app.controller('eventsCtrl', function () {
 
 });
 
-app.controller('appCtrl', function () {
+app.controller('eventCtrl', function () {
+
+});
+
+app.controller('pageCtrl', function () {
+
+});
+
+app.controller('adminCtrl', function () {
 
 });
 
@@ -114,4 +139,4 @@ var UID = function () {
     } else {
         return undefined;
     }
-};
+}
