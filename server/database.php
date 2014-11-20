@@ -34,11 +34,12 @@ class database {
     }
 
     function fromFile($path) {
-        $data = json_decode(file_get_contents($path));
-        if ($this->data["version"] == $data["version"]) {
-            $this->data = $data;
+        if (file_exists($path)) {
+            $data = json_decode(file_get_contents($path));
+            if ($this->data["version"] == $data["version"]) {
+                $this->data = $data;
+            }
         }
-
     }
 
 }
